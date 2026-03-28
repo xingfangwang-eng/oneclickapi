@@ -3,13 +3,15 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
-import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'OneClickAPI | Instant API Tester & Code Generator',
   description: 'The fastest way to test APIs and get code snippets. No login, no bloat.',
+  verification: {
+    google: 'uTT2vLHXrvh44esSpln_EMc1QEFjkN0vjJZ04UgI0Qc',
+  },
   openGraph: {
     title: 'Stop setting up Postman. Paste API here.',
     description: '0.8 seconds to see your API response and get the code.',
@@ -39,9 +41,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <Head>
-        <meta name="google-site-verification" content="uTT2vLHXrvh44esSpln_EMc1QEFjkN0vjJZ04UgI0Qc" />
-      </Head>
       <body className={inter.className}>
         <ServiceWorkerRegistration />
         {children}
